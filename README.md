@@ -16,7 +16,7 @@ AxonIQ Server needs to be running.
 To start your portfolio, first an user needs to be created, then, you can start opening and closing positions.
 If you try to open a position without creating an account, an error will appear.
 
-After reading the API section, you can start playing with the api by using the workflow_example.http file included in
+After reading the API section, you can start playing with the api by using the [workflow_example.http](workflow_example.http) file included in
  the repository.
 
 ## API

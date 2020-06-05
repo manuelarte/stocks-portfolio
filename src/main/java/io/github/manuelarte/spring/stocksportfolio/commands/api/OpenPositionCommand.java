@@ -1,7 +1,6 @@
 package io.github.manuelarte.spring.stocksportfolio.commands.api;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;

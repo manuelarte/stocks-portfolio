@@ -1,13 +1,8 @@
 package io.github.manuelarte.spring.stocksportfolio.controllers.dtos;
 
-import io.github.manuelarte.spring.stocksportfolio.commands.api.PositionOpenedEvent;
 import io.github.manuelarte.spring.stocksportfolio.queries.StockPosition;
-import java.math.BigDecimal;
-import java.time.ZonedDateTime;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Positive;
 import javax.validation.constraints.PositiveOrZero;
 import org.springframework.data.annotation.Immutable;
 

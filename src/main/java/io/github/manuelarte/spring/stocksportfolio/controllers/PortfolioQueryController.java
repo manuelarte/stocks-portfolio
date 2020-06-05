@@ -9,6 +9,7 @@ import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +23,12 @@ public class PortfolioQueryController {
 
   private final QueryGateway queryGateway;
 
-  @GetMapping("/positions")
+  @GetMapping(value = "/positions", produces = MediaType.APPLICATION_JSON_VALUE)
   public CompletableFuture<ResponseEntity<Page<StockPositionDto>>> getUserPositions(@PathVariable final String userId,
       @PageableDefault final Pageable pageable) {
-    CompletableFuture<Page<StockPosition>> response = queryGateway.query(FindStockPositions.of(pageable, userId),
-        new PageResponseType(StockPosition.class));
-    return response.thenApply(e -> ResponseEntity.ok(e.map(it -> StockPositionDto.of(it))));
+    final CompletableFuture<Page<StockPosition>> response = queryGateway.query(FindStockPositions.of(pageable, userId),
+        new PageResponseType<>(StockPosition.class));
+    return response.thenApply(e -> ResponseEntity.ok(e.map(StockPositionDto::of)));
   }
 
 }

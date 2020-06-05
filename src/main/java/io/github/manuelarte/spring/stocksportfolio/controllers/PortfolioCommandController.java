@@ -7,6 +7,7 @@ import io.github.manuelarte.spring.stocksportfolio.controllers.dtos.OpenPosition
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,7 @@ public class PortfolioCommandController {
 
   private final CommandGateway commandGateway;
 
-  @PostMapping
+  @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
   public CompletableFuture<ResponseEntity<Object>> openPosition(@PathVariable final String userId,
       @PathVariable final String symbol, @RequestBody final OpenPositionDto body) {
     final var id = UUID.randomUUID();
@@ -33,7 +34,7 @@ public class PortfolioCommandController {
     return send.thenApply(ResponseEntity::ok);
   }
 
-  @DeleteMapping
+  @DeleteMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
   public CompletableFuture<ResponseEntity<Object>> closePosition(@PathVariable final String userId,
       @PathVariable final String symbol, @RequestBody final ClosePositionDto body) {
     final var id = UUID.randomUUID();

@@ -1,6 +1,5 @@
 package io.github.manuelarte.spring.stocksportfolio.controllers;
 
-import io.github.manuelarte.spring.stocksportfolio.commands.api.AccountCreatedEvent;
 import io.github.manuelarte.spring.stocksportfolio.commands.api.CreateAccountCommand;
 import java.util.concurrent.CompletableFuture;
 import org.axonframework.commandhandling.gateway.CommandGateway;

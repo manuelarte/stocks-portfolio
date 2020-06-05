@@ -1,0 +1,33 @@
+POST http://localhost:8080/api/v1/users/manuelarte
+
+###
+
+POST http://localhost:8080/api/v1/portfolios/manuelarte/positions/BBVA
+Content-Type: application/json
+
+{
+  "quantity": "12",
+  "amount": "110",
+  "currency": "EUR",
+  "timestamp": "2020-06-05T13:00:00Z"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/portfolios/manuelarte/positions/BBVA
+Content-Type: application/json
+
+{
+  "quantity": "4",
+  "amount": "40",
+  "currency": "EUR",
+  "timestamp": "2020-06-08T13:00:00Z"
+}
+
+###
+
+GET http://localhost:8080/api/v1/portfolios/manuelarte/positions
+Accept: application/json
+
+###
+

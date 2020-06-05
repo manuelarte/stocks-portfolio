@@ -1,6 +1,6 @@
 # Stock Portfolio #
 
-Small project using CQRS and event sourcing in Spring Boot with [Axos](https://axoniq.io/)
+Small project using CQRS and event sourcing in Spring Boot with [AxonIO](https://axoniq.io/)
 This project allows you to open positions, keep track of your portfolio based on events.
 
 ## Prerequisites ##

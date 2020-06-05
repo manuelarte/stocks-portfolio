@@ -8,12 +8,12 @@ import java.time.ZonedDateTime;
 import javax.annotation.concurrent.Immutable;
 
 @Immutable
-@JsonDeserialize(builder = OpenPositionDto.OpenPositionDtoBuilder.class)
+@JsonDeserialize(builder = ClosePositionDto.ClosePositionDtoBuilder.class)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @lombok.AllArgsConstructor
 @lombok.Value
 @lombok.Builder(toBuilder = true)
-public class OpenPositionDto {
+public class ClosePositionDto {
 
   private final int quantity;
   private final ZonedDateTime timestamp;
@@ -21,7 +21,7 @@ public class OpenPositionDto {
   private final String currency;
 
   @JsonPOJOBuilder(withPrefix = "")
-  public static final class OpenPositionDtoBuilder {
+  public static final class ClosePositionDtoBuilder {
 
   }
 

@@ -22,6 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.yahoofinance-api:YahooFinanceAPI:3.15.0'
 	implementation 'javax.validation:validation-api:2.0.1.Final'
 	implementation 'org.hibernate:hibernate-validator:7.0.0.Alpha3'
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'

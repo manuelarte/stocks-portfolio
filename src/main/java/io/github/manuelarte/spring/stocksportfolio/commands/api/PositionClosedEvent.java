@@ -1,7 +1,8 @@
-package io.github.manuelarte.spring.stocksportfolio.events;
+package io.github.manuelarte.spring.stocksportfolio.commands.api;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
@@ -9,17 +10,19 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @lombok.AllArgsConstructor
 @lombok.Value
-public class PositionOpenedEvent {
-
-  @TargetAggregateIdentifier
-  private final String id;
+public class PositionClosedEvent {
 
   @NotNull
-  private final String value;
+  private final UUID id;
+
+  private final String userId;
+
+  @NotNull
+  private final String symbol;
 
   @NotNull
   @PastOrPresent
-  private final Instant timestamp;
+  private final ZonedDateTime timestamp;
 
   @Positive
   private final int quantity;
